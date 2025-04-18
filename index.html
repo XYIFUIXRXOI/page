@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP 网站示例</title>
+    <style>
+        body {
+            background-image: url('./preview.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-content {
+            width: 100%;
+            text-align: center;
+        }
+
+        .text-content h1,
+        .text-content p {
+            color: white;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            animation: fadeIn 0.5s ease-out;
+            width: 100%;
+            max-width: 360px;
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            transition: border-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #3b82f6;
+            color: white;
+            text-align: center;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                flex-direction: row;
+            }
+
+            .text-content {
+                width: 50%;
+            }
+
+            .login-wrapper {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="text-content">
+            <h1 class="text-3xl font-bold mb-4">欢迎来到我的 PHP 网站</h1>
+            <p class="text-lg">这是一个简单的 PHP 网站示例，包含首页和关于页面。</p>
+        </div>
+        <div class="login-wrapper">
+            <div class="login-container">
+                <form action="./process_login.php" method="post">
+                    <h2 class="text-2xl font-bold mb-4 text-center">登录</h2>
+                    <div class="input-group">
+                        <label for="username"><i class="fa-solid fa-user"></i> 用户名</label>
+                        <input type="text" id="username" name="username" placeholder="请输入用户名" maxlength="10" pattern="[a-zA-Z0-9]{2,10}" required title="用户名只能包含字母和数字，长度至少 2 字符且不能超过 10 个字符。">
+                    </div>
+                    <div class="input-group">
+                        <label for="password"><i class="fa-solid fa-lock"></i> 密码</label>
+                        <input type="password" id="password" name="password" placeholder="请输入密码" maxlength="20" pattern="[a-zA-Z0-9!@#$%.]{0,20}" title="密码长度不超过20个字符，且只能为字母和数字和!@#$%." required>
+                    </div>
+                    <button type="submit" class="btn">登录</button>
+                </form>
+                <br>
+                <div>
+                    <li style="list-style-type: none;">还没有账号？<a href="register.html" style="color: #3b82f6;">点击注册账号</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+    
